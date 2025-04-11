@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto p-4 text-gray-200">
+    <h1 class="text-3xl font-bold mb-4">Delete Task</h1>
+    <p class="mb-4">Are you sure you want to delete "{{ object.title }}"?</p>
+    <form method="post" class="space-x-2">
+        {% csrf_token %}
+        <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+            Yes, Delete
+        </button>
+        <a href="{% url 'todo-list' %}" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">
+            Cancel
+        </a>
+    </form>
+</div>
+{% endblock %}
